@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Details</title>
+</head>
+<body>
+    <h1>Details for Word: <i>{{ data['Word'] }}</i></h1>
+
+    <h2>Vector:</h2>
+    <p>{{ vec }}</p>
+
+    <h3>Rating Details: <i>{{ data['Word'] }}</i></h3>
+    <ul>
+        <button onclick="toggleSimilarities('{{ word }}')">Display Rating Details</button>
+        <ul id="similarities-{{ word }}" style="display: none;">
+            {% for col in selected_columns %}
+                <li><strong>{{ col }}:</strong> {{ data[col] }}</li>
+            {% endfor %}
+        </ul>
+    </ul>
+
+    <h3>Most Similar Words</h3>
+    <ul>
+        {% for word, similarity in similar_words %}
+            <li>{{ word }} - Similarity: {{ '%.2f' % similarity }} <br>
+            <ul>
+                <button onclick="toggleSimilarities('{{ word }}')">Display Rating Details</button>
+                <ul id="similarities-{{ word }}" style="display: none;">
+                    {% for col in selected_columns %}
+                        <li><strong>{{ col }}:</strong> {{ similar_word_vecs[word][loop.index0] }}</li>
+                    {% endfor %}
+                </ul>
+
+                <script>
+                function toggleSimilarities(word) {
+                    var similaritiesList = document.getElementById('similarities-' + word);
+                    if (similaritiesList.style.display === 'none') {
+                        similaritiesList.style.display = 'block';
+                    } else {
+                        similaritiesList.style.display = 'none';
+                    }
+                }
+                </script>
+            </ul>
+            <br>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <!-- View Item page -->
+    <a href="/?columns={{ selected_columns | join(',') }}" class="btn">Return to Table</a>
+
+</body>
+</html>

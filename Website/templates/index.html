@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREA Data</title>
+
+    <!-- Adding CSS for checkbox layout-->
+    <style>
+        /* Apply a grid layout to the checkbox container */
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive columns */
+            gap: 15px; /* Space between checkboxes */
+            margin-bottom: 20px; /* Space below the grid */
+        }
+
+        .checkbox-grid label {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 5px; /* Space between checkbox and label text */
+        }
+
+        input[type="checkbox"] {
+            transform: scale(1.2); /* Optional: Enlarge checkboxes slightly */
+        }
+    </style>
+</head>
+<body>
+    <h1>CREA Data</h1>
+    <h4>**Note missing data in <em>Complexity, Manipulation, Object, Caused</em>**</h4>
+    <!-- Form to select columns dynamically -->
+    <form method="POST" action="/">
+        <label for="columns">Select columns to display:</label><br>
+
+        <!-- Wrap checkboxes in a div for grid layout -->
+        <div class="checkbox-grid">
+            {% for column in columns %}
+                <label>
+                    <input type="checkbox" id="checkbox-{{ column }}" name="columns" value="{{ column }}"  
+                    {% if column in selected_columns %} checked {% endif %}> 
+                    {{ column }}
+                </label>
+            {% endfor %}
+        </div>
+
+        <br>
+        <input type="submit" value="Update Table">
+        
+        <!-- Deselect Specific Columns Button -->
+        <button type="button" onclick="deselectColumns(['Complexity', 'Manipulation', 'Object', 'Caused'])">Deselect Missing Columns</button>
+        <button type="button" onclick="deselectAll()">Deselect All</button>
+        <input type="text" id="searchBar" placeholder="Search for a word" onkeyup="filterTable()">    
+    </form>
+    <script>
+        function filterTable() {
+            var input = document.getElementById('searchBar').value.toLowerCase();
+            var rows = document.querySelectorAll('tr');
+            rows.forEach(function(row) {
+                var cells = row.querySelectorAll('td, th');
+                var found = false;
+                cells.forEach(function(cell) {
+                    if (cell.innerText.toLowerCase().includes(input)) {
+                        found = true;
+                    }
+                });
+                if (found) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+   
+    <script>
+        function deselectColumns(columnsToDeselect) {
+            // Loop through all checkboxes
+            columnsToDeselect.forEach(function(column) {
+                var checkbox = document.getElementById('checkbox-' + column);
+                if (checkbox) {
+                    checkbox.checked = false;  
+                }
+            });
+        }
+
+        function deselectAll() {
+            // Loop through all checkboxes and uncheck them
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(function(checkbox) {
+                checkbox.checked = false;
+            });
+        }
+    </script>
+
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Word</th>
+                {% for column in selected_columns %}
+                    <th>{{ column }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <!-- Pass selected_columns as URL parameters -->
+                <td><a href="{{ url_for('view_item', word=row['Word'], columns=selected_columns) }}">{{ row['Word'] }}</a></td>
+                {% for column in selected_columns %}
+                    <td>{{ row[column] }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
