@@ -1,12 +1,3 @@
-import json
-import scikit-learn as sklearn
-print(sklearn.__version__)
-from sklearn.metrics.pairwise import cosine_similarity
-
-with open('/Users/al33856/Downloads/selected_words (4).json') as f:
-    d = json.load(f)
-    print(d)
-
 class CREA_library:
     def __init__(self, word_vectors):
         self.word_vectors = word_vectors
