@@ -1,0 +1,9 @@
+pyproject.toml
+setup.py
+Crea_library/__init__.py
+Crea_library/crea_library.py
+Crea_library.egg-info/PKG-INFO
+Crea_library.egg-info/SOURCES.txt
+Crea_library.egg-info/dependency_links.txt
+Crea_library.egg-info/requires.txt
+Crea_library.egg-info/top_level.txt
