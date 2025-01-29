@@ -1,3 +1,8 @@
+import sklearn
+from sklearn.metrics.pairwise import cosine_similarity
+import json
+import numpy as np
+
 class CREA_library:
     def __init__(self, word_vectors):
         self.word_vectors = word_vectors
