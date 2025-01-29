@@ -42,10 +42,3 @@ class CREA_library:
         return cosine_similarity(vec1, vec2)[0][0]
     
 
-all_vecs = CREA_library(d)
-print(all_vecs.get_vector('doctor'))
-print(all_vecs.get_vectors(['doctor', 'chocolate']))
-a = (all_vecs.select_cols(['doctor', 'peace'], [0,1]))
-# with open("data.json", "w") as f:
-#     json.dump(a, f)
-print(all_vecs.cosine_similarity('doctor', 'peace'))
