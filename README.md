@@ -11,3 +11,4 @@ Crea Library
 - Use the Crea library on a dictionary of words with "pip install Crea-library==0.3"
 - import library via "from Crea_library.crea_library import *"
   
+[crea_methods.docx](https://github.com/user-attachments/files/18711458/crea_methods.docx)
