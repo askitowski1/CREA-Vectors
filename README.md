@@ -12,3 +12,8 @@ Crea Library
 - import library via "from Crea_library.crea_library import *"
   
 [crea_methods.docx](https://github.com/user-attachments/files/18711458/crea_methods.docx)
+
+PsychoPy Data Collection
+- Results are saved as a JSON file named "results.json"
+- Currently it is overwritten each time
+- JSON file has the structure {"target_word": {"Rating Category 1": rating1, ... "Rating Category n": ratingn}}
