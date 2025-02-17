@@ -16,4 +16,4 @@ Crea Library
 PsychoPy Data Collection
 - Results are saved as a JSON file named "results.json"
 - Currently it is overwritten each time
-- JSON file has the structure {"target_word": {"Rating Category 1": rating1, ... "Rating Category n": ratingn}}
+- JSON file has the structure {"target_word": {"Rating Category 1": rating_1, ... "Rating Category n": rating_n}}
