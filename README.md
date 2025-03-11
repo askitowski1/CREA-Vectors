@@ -6,7 +6,7 @@ Future updates will all users to add their collected vectors to the main set
 ## How to run the code
 1. Clone the repository
 2. Navigate to the crea_library folder and run python crea.py
-3. In python import the file
+3. In python import the library
    - from crea import CREA
    - crea_initialize = CREA() #this will automatically pull from the main dictionary, or you can pass your own json file
    - use get_all_vectors, get_vector, get_vectors, select_cols, cosine_similarity, get_n_similar
