@@ -9,7 +9,7 @@ Future updates will all users to add their collected vectors to the main set
 3. In python import the library
    - from crea import CREA
    - crea_initialize = CREA() #this will automatically pull from the main dictionary, or you can pass your own json file
-   - use get_all_vectors, get_vector, get_vectors, select_cols, cosine_similarity, get_n_similar
+   - use get_all_vectors, get_vector, get_vectors, select_cols, cosine_similarity, get_n_similar, strip
 
 ## PsychoPy Data Collection
 - Results are saved as a JSON file named "results.json"
