@@ -18,10 +18,12 @@ Future updates will allow users to add their collected vectors to the main set
    - similarity = c.cosine_similarity('word1', 'word2')
    - n_similar = c.top_n_similar('word1', 5) # defaults to 5
 
-
+   
 ## PsychoPy Data Collection
-- Results are saved as a JSON file named "results.json"
+- Results are saved as a JSON file named 'results.json'
 - Currently it is overwritten each time
-- JSON file has the structure {"target_word": {"Rating Category 1": rating_1, ... "Rating Category n": rating_n}}
+- JSON file has the structure {'target_word': {'Rating Category 1': rating_1, ... 'Rating Category n': rating_n}}
+- CREA.get_raw('results.json') gets the new raw data from results.json and adds a new row to raw results.csv
+- CREA.calculate_averages('results.csv') calculates the average of results.csv and returns a DataFrame of the averages
 
 
