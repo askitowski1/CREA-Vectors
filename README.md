@@ -8,8 +8,16 @@ Future updates will all users to add their collected vectors to the main set
 2. Navigate to the crea_library folder and run python crea.py
 3. In python import the library
    - from crea import CREA
-   - crea_initialize = CREA() #this will automatically pull from the main dictionary, or you can pass your own json file
-   - use get_all_vectors, get_vector, get_vectors, select_cols, cosine_similarity, get_n_similar, strip
+   - c = CREA() # Automatically loads main dictionary or
+   - c = CREA('path_to_file.json') # Load custom json file
+   ### Available Functions
+   - all_vectors = c.get_all_vectors()
+   - vector = c.get_vector('word1')
+   - vectors = c.get_vectors(['word1', 'word2'])
+   - vectors_and_cols = c.select_cols(['word1', 'word2'], [1,3,5])
+   - similarity = c.cosine_similarity('word1', 'word2')
+   - n_similar = c.top_n_similar('word1', 5) # defaults to 5
+
 
 ## PsychoPy Data Collection
 - Results are saved as a JSON file named "results.json"
