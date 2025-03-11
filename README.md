@@ -10,7 +10,7 @@ Future updates will all users to add their collected vectors to the main set
    - from crea import CREA
    - c = CREA() # Automatically loads main dictionary or
    - c = CREA('path_to_file.json') # Load custom json file
-   ### Available Functions
+   ### Usage
    - all_vectors = c.get_all_vectors()
    - vector = c.get_vector('word1')
    - vectors = c.get_vectors(['word1', 'word2'])
