@@ -1,7 +1,7 @@
 # CREA-Vectors
 
 This is a package to access CREA vectors. Various data collection methods are also included.
-Future updates will allow users to add their collected vectors to the main set
+Future updates will allow users to add their collected vectors to the main set.
 
 ## How to run the code
 1. Clone the repository
