@@ -9,5 +9,4 @@ dist/
 build/
 *.egg-info/
 
-# Ignore virtual environment (if using)
-venv/
+
