@@ -1,0 +1,68 @@
+Vision	is	something that you can easily see	moon	the moon is a physical object you can easily see.	disease	disease is something that you may or may not be able to see.	visual
+Bright	is	visually light or bright	snow	snow is very bright.	banana	bananas have a somewhat light color.	early visual
+Dark	is	visually dark	coal	coal is very dark.	mud	mud has a somewhat dark color.	early visual
+Color	has	a characteristic or defining color	grass	grass has a very characteristic color.	pony	the color of ponies is somewhat variable.	p fusiform g, lingual g
+Pattern	has	a characteristic or defining visual texture or surface pattern	tiger	tigers have a very characteristic striped surface pattern.	pond	the surface of a pond has a subtle visual texture.	p fusiform g, lingual g
+Large	is	large in size	volcano	volcanos are very large in size.	camel	camels are somewhat large in size.	medial ventral stream
+Small	is	small in size	bacterium	bacteria are very small in size.	cat	cats are somewhat small in size.	lateral ventral stream
+Motion	shows	a lot of visually observable movement	tornado	tornados show a lot of observable movement.	clock	clock parts move, but not very noticeably.	MT+, p MT g
+Biomotion	shows	movement like that of a living thing	monkey	monkeys show movements that are very typical of a living thing.	snail	snails are alive and move, but not like typical animals.	p STS, p MT g, a SM g
+Fast	shows	visible movement that is fast	motorcycle	motorcycles typically move very fast.	cat	cats sometimes move fast.	MT+, p MT g
+Slow	shows	visible movement that is slow	snail	snails typically move very slowly.	cow	cows usually move somewhat slowly.	MT+, p MT g
+Shape	has	a characteristic or defining visual shape or form	giraffe	giraffes have a very characteristic visual shape.	chocolate	chocolate can come in a variety of shapes.	VOT, LOC, p IPS, PoC g, a SM g, PrC g
+Complexity	is	visually complex	motorcycle	motorcycles have many visually observable parts.	skateboard	skateboards have relatively few observable parts. 	VOT, LOC, p IPS, PoC g, a SM g, PrC g
+Face	has	a human or human-like face	nurse	nurses have human faces.	cat	cat and human faces share some similar features.	FFA (VOT), p STS
+Body	has	human or human-like body parts	nurse	nurses have human body parts.	cat	cats have some body parts that are similar to humans.	EBA (VOT, LOC), p STS
+Touch	is	something that you could easily recognize by touch	toothbrush	a toothbrush is something you can touch and recognize by feel.	onion	an onion might be a little hard to recognize by touch alone.	somatosensory
+Hot	is	hot to the touch	fire	fire has a very hot temperature.	hamburger	hamburgers are usually warm to the touch.	PoC g, a SM g
+Cold	is	cold to the touch	ice	ice has a very cold temperature.	knife	knives are usually cool to the touch.	PoC g, a SM g
+Smooth	has	a smooth texture to the touch	silk	silk is very smooth to the touch. 	cardboard	cardboard is fairly smooth.	PoC g, a SM g, p fusiform g
+Rough	has	a rough texture to the touch	stubble	beard stubble is very rough to the touch. 	brick	the surface of a brick is fairly rough.	PoC g, a SM g, p fusiform g
+Light	is	light in weight	balloon	toy balloons are very light in weight.	apple	apples are fairly light in weight.	PoC g, a SM g, PrC g
+Heavy	is	heavy in weight	anvil	anvils are very heavy in weight.	bookcase	bookcases are fairly heavy, but typically can be lifted with effort.	PoC g, a SM g, PrC g
+Pain	is associated with	pain or physical discomfort	headache	headaches are associated with a lot of pain and physical discomfort.	pin	a pin might accidentally cause pain.	PoC g, p Insula
+Audition	is	something that you can easily hear	siren	sirens are easy to hear.	stream	streams make sounds but are somewhat difficult to hear.	auditory
+Loud	makes	a loud sound	explosion	explosions make very loud sounds.	argument	arguments can sometimes be loud.	early auditory
+Low	has	a low-pitched sound	tuba	tubas make very low sounds.	cow	cows make fairly low-pitched sounds.	TT g
+High	has	a high-pitched sound	whistle	whistles make very high sounds.	rooster	roosters make fairly high-pitched sounds.	PP, PT
+Sound	has	a characteristic or recognizable sound or sounds	rooster	roosters make very recognizable sounds.	truck	trucks make somewhat recognizeable sounds.	ST g, STS, p MT g, p IF g
+Music	makes	a musical sound	orchestra	orchestras make musical sounds.	windchimes	windchimes make a somewhat musical sound.	PP, PT, ST g, STS
+Speech	is	someone or something that talks	actress	actresses very often talk.	baby	babies make babbling noises that sound similar to speech.	ST g, STS, p MT g, p IF g
+Taste	has	a characteristic or defining taste	banana	bananas have a very characteristic taste.	chicken	chicken has a subtle but recognizable taste.	OFC, a Insula
+Smell	has	a characteristic or defining smell or smells	orange	oranges have a very characteristic smell.	dirt	dirt has a subtle but recognizable smell.	medial TP, OFC, a Insula
+Head	is associated with	actions using the face, mouth, or tongue	whistle	whistles are objects you use with your face and mouth.	candle	candles are things you sometimes blow out.	PrC g, PoC g - ventral
+UpperLimb	is associated with	actions using the arm, hand, or fingers	keyboard	keyboards are objects you use with your hands and fingers.	shoe	wearing shoes requires relatively little hand or arm involvement.	PrC g, PoC g - dorsal
+LowerLimb	is associated with	actions using the leg or foot	pedal	pedals are objects you work with your leg and foot.	elevator	using an elevator requires only minimal leg and foot involvement.	PrC g, PoC g - medial
+Manipulation	is	a physical object YOU have personal experience using	fork	forks are objects you likely have a lot of personal experience using.	saw	you probably have some experience using a saw.	PrC g, PoC g
+Landmark	has	a fixed location, as on a map	library	libraries and other buildings have a very fixed location.	bush	bushes have a fixed location but are not distinctive enough to be marked on maps.	PPA, PHip g
+Path	shows	changes in location along a particular direction or path	rocket	rockets follow a typical path upward into the sky.	helicopter	helicopters might move along various horizontal and vertical paths.	IPS
+Scene	brings to mind	a particular setting or physical location	bed	thinking of a bed might bring to mind a bedroom.	cup	thinking of a cup might bring to mind a variety of different locations.	PPA, VOT
+Near	is	often physically near to you (within easy reach) in everyday life	wristwatch	your watch is physically very near to you in everyday life, assuming you wear a watch.	pen	you may have a pen near you when you work.	IPS, PrC g, PoC g
+Toward	is associated with	movement toward or into you	food	food is something you typically bring toward and into you.	cup	a cup is something you typically bring toward you.	IPS
+Away	is associated with	movement away from or out of you	vomit	vomit is something that comes out of and away from you.	key	a key is something you typically move away from you.	IPS
+Number	is associated with	a specific number or amount	week	the word week indicates 7 days.	glove	the word glove might make you think of 5 fingers.	IPS, dorsal angular G
+Time	is	an event or occurrence that occurs at a typical or predictable time	lunch	lunch is an event that typically occurs around noon.	holiday	holidays occur on somewhat predictable dates.	MT g
+Duration	is	an event that has a predictable duration, whether short or long	movie	movies have a fairly standard duration.	concert	concerts are somewhat variable in duration.	MT g
+Long	is 	an event that lasts for a long period of time	life	peoples'' lives typically last a long time.	war	wars often last for several years.	MT g
+Short	is 	an event that lasts for a short period of time	sneeze	a sneeze is a very brief event.	laughter	laughter typically lasts less than a minute.	MT g
+Caused	is	caused by some clear preceding event, action, or situation	spill	spills are preceded by an event or action that causes the spill to occur.	friendship	friendships can develop without any identifiable cause.	MT g, SF g
+Consequential	is	likely to have consequences (cause other things to happen)	invasion	an invasion is likely to lead to other things happening.	idea	ideas sometimes have consequences.	MT g, SF g
+Social	is	an activity or event that involves an interaction between people	wedding	weddings are events that involve many interactions between people.	jog	jogging may or may not involve interactions between people.	p STS, TP, OFC, m PFC
+Human	has	human or human-like intentions, plans, or goals	lobbyist	lobbyists have complex intentions, plans, and goals.	toddler	toddlers have very simple needs and goals.	p STS, TP, OFC, m PFC
+Communication	is	a thing or action that people use to communicate	conversation	conversations are one method people use to communicate.	pen	pens are tools often used to communicate.	p STS, TP, OFC, m PFC, IF g
+Self	is	related to your own view of yourself, a part of YOUR self-image	integrity	you probably see yourself as having integrity.	motorist	you likely drive but this may not be a key part of your self-image.	p STS, TP, OFC, m PFC, PCing g
+Cognition	is	a form of mental activity or a function of the mind	thought	thought is produced by mental activity.	sport	sports require a degree of purely mental effort.	IF g, MF g, Acing g
+Benefit	is	someone or something that could help or benefit you or others	cure	cures usually help or benefit many people.	news	news can provide information that helps people.	med PFC, OFC, TP
+Harm	is	someone or something that could cause harm to you or others	epidemic	epidemics usually cause harm to many people.	snow	snow can sometimes be a danger.	med PFC, OFC, TP
+Pleasant	is	someone or something that you find pleasant	music	most people find listing to music very pleasant.	breeze	a breeze can be pleasant when you''re hot.	med PFC, OFC, TP
+Unpleasant	is	someone or something that you find unpleasant	flu	having the flu is very unpleasant.	dust	dust can be somewhat unpleasant.	med PFC, OFC, amygdala, TP
+Happy	is	someone or something that makes you feel happy	love	love is something that typically makes people feel very happy.	lunch	having lunch can be restful and fun.	med PFC, OFC, d ACing g, TP
+Sad	is	someone or something that makes you feel sad	death	death is something that typically makes people feel very sad.	rain	rain can make a day seem gloomy.	subgenual ACing g, OFC, TP
+Angry	is	someone or something that makes you feel angry	disrespect	disrespect is something that makes people feel very angry.	chore	chores can be annoying.	OFC, IF g, a Insula, TP
+Disgusted	is	someone or something that makes you feel disgusted	vomit	vomit is something that makes people feel very disgusted.	trash	trash can be somewhat disgusting.	a Insula, OFC, amygdala, TP
+Fearful	is	someone or something that makes you feel afraid	danger	danger is something that makes people feel afraid.	thunder	loud thunder can be somewhat scary.	amygdala, OFC, TP
+Surprised	is	someone or something that makes you feel surprised	shock	a shock is something unexpected that makes you feel very surprised.	doorbell	a doorbell can be somewhat surprising.	med PFC, OFC, amygdala, TP
+Drive	is	someone or something that motivates you to do something	duty	duty is something that people feel they must do.	picture	a picture might give you an idea.	m PFC, ACing g, SMA, a Insula
+Needs	is	someone or something that would be hard for you to live without	shelter	shelter is absolutely necessary for safety and wellbeing.	napkin	life without napkins would be inconvenient.	m PFC, OFC, ACing g, a Insula
+Attention	is	someone or something that grabs your attention	scream	a scream is something that grabs your attention and is impossible to ignore.	cat	seeing a cat might cause you to watch what it does.	lat PFC, FEF, ACing g, IPS, a Insula
+Arousal	is	someone or something that makes you feel alert, activated, excited, or keyed up in either a positive or negative way	rollercoaster	riding a rollercoaster is an activity that is typically very arousing.	radio	listening to the radio can be interesting.	med PFC, ACing g, a thalamus
