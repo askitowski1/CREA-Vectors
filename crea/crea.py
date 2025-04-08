@@ -14,7 +14,7 @@ class CREA:
     def __init__(self, data_path=None):
         # Load the JSON file when an instance is created
         if data_path is None:
-            default_url = 'https://raw.githubusercontent.com/askitowski1/CREA-Vectors/refs/heads/main/crea/all_words.csv
+            default_url = 'https://raw.githubusercontent.com/askitowski1/CREA-Vectors/refs/heads/main/crea/all_words.csv'
             json_from_csv_data = self._csv_to_json(default_url)
             self.word_vectors = json_from_csv_data
         else:
