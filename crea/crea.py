@@ -11,15 +11,16 @@ PACKAGE_DIR = os.path.dirname(__file__)
 DATA_PATH = os.path.join(PACKAGE_DIR, "data", "data.json")
 
 class CREA:
-    def __init__(self, data_path=None):
+    def __init__(self, data_path=None, col_names=False):
         # Load the JSON file when an instance is created
         if data_path is None:
             default_url = 'https://raw.githubusercontent.com/askitowski1/CREA-Vectors/refs/heads/main/crea/all_words_dropna.csv'
-            json_from_csv_data = self._csv_to_json(default_url)
+            json_from_csv_data = self._csv_to_json(default_url, col_names)
             self.word_vectors = json_from_csv_data
         else:
-            # Custom file, must be JSON
-            self.word_vectors = self._load_json_from_file(data_path)
+            # Custom file, must be CSV with a 'Word' column
+            json_from_csv_data = self._csv_to_json(data_path, col_names)
+            self.word_vectors = json_from_csv_data
 
     @staticmethod
     def _load_json_from_file(file_path):
@@ -32,18 +33,21 @@ class CREA:
         except json.JSONDecodeError:
             raise ValueError(f"Error: the file '{file_path}' is not a valid JSON file")
         
-    # @staticmethod
-    # def _load_json_from_url(url):
-    #     """Load JSON from a URL."""
-    #     with urllib.request.urlopen(url) as response:
-    #         return json.load(response)
+    @staticmethod
+    def _load_json_from_url(url):
+        """Load JSON from a URL."""
+        with urllib.request.urlopen(url) as response:
+            return json.load(response)
         
     @staticmethod
-    def _csv_to_json(file_path_or_url):
+    def _csv_to_json(file_path_or_url, col_names = False):
         """Convert a CSV file or URL to JSON."""
         try:
             data = pd.read_csv(file_path_or_url)
-            dict_data = data.set_index('Word').T.to_dict('list')
+            if not col_names:
+                dict_data = data.set_index('Word').T.to_dict('list')
+            else:
+                dict_data = data.set_index('Word').to_dict(orient='index')
             return dict_data
         except Exception as e:
             print(f"An error occurred: {e}")
@@ -90,44 +94,64 @@ class CREA:
         :type columns: list
         """
         selected_vecs = {}
+        columns = [word.capitalize() for word in columns]
         for word in words:
             vec = self.get_vector(word)
             if vec is not None:
-                selected_vecs[word] = [vec[col] for col in columns]
+                selected_vecs[word] = [vec[col] for col in columns if col in vec]
         return selected_vecs
 
-    def cosine_similarity(self, word1, word2):
+    def cosine_similarity(self, word1, word2, columns= False):
         """
         Calculate the cosine similarity between two words
         :param word1: The first word
         :type word1: str
         :param word2: The second word
         :type word2: str
+        :param columns: A list of target columns
+        :type columns: list
         """
-        vec1, vec2 = self.get_vector(word1), self.get_vector(word2)
+        if not columns:
+            vec1, vec2 = self.get_vector(word1), self.get_vector(word2)
 
-        vec1, vec2 = np.array(vec1).reshape(1, -1), np.array(vec2).reshape(1, -1)
+            vec1, vec2 = np.array(vec1).reshape(1, -1), np.array(vec2).reshape(1, -1)
+        else:
+            columns = [word.capitalize() for word in columns]
+            selected_vecs = self.select_cols([word1, word2], columns)
+            vec1, vec2 = selected_vecs.get(word1), selected_vecs.get(word2)
+        
+            if vec1 is None or vec2 is None:
+                raise ValueError(f"One or both words '{word1}' and '{word2}' do not have the selected columns.")
+            vec1, vec2 = np.array(vec1).reshape(1, -1), np.array(vec2).reshape(1, -1)
+    
         return cosine_similarity(vec1, vec2)[0][0]
 
-    def top_n_similar(self, word, n=5):
+    def top_n_similar(self, word, columns = False, n=5):
         """
         Get the top N most similar words to a target word by cosine similarity
         :param word: The target word
         :type word: str
+        :type columns: list
         :param n: The number of similar words to return (default is 5)
         :type n: int
         """
-        target_vec = self.get_vector(word)
+        if not columns:
+            target_vec = self.get_vector(word)
+        else:
+            vec1 = self.select_cols([word], columns)
+            target_vec = vec1.get(word)
         if target_vec is None:
             raise ValueError("Vector is empty")
         
+        target_vec = np.array(target_vec).reshape(1, -1)
         similarities = {}
         for other_word, vec in self.word_vectors.items():
             if other_word != word:
-                similarity = self.cosine_similarity(word, other_word)
+                similarity = self.cosine_similarity(word, other_word, columns)
                 similarities[other_word] = similarity
-        
+    
         sorted_similarities = sorted(similarities.items(), key=lambda item: item[1], reverse=True)
+    
         return sorted_similarities[:n]
     
     @staticmethod
