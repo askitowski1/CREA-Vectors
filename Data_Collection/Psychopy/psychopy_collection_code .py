@@ -208,9 +208,7 @@ response_map = {
     "5": 5,
     "6": 6
 }
-# -----------------------------
-# Button Practice Walkthrough
-# -----------------------------
+
 walkthrough_text = visual.TextStim(win, text="""
 This is the rating scale you will use during the experiment.
 
