@@ -217,7 +217,7 @@ You will rate each question using this scale from 0 ("Not at All") to 6 ("Very M
 You can also select "N" for "Not Applicable".
 
 Try clicking or pressing a number key now. Once you've selected, click 'Advance' or press the 'a' key to continue to the experiment .
-""", wrapWidth=1.4, height=0.045, color='black', pos=(0, 0.75), alignText='left')
+""", wrapWidth=1.4, height=0.045, color='black', pos=(0, 0.2), alignText='left')
 
 practice_adv_btn = visual.ButtonStim(win, text="Advance", pos=(0.826, -0.88), size=(0.2, 0.1), fillColor='white', color='white', autoLog=False)
 
