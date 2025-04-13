@@ -9,7 +9,9 @@ Future updates will allow users to add their collected vectors to the main set.
 3. In python import the library
    - from crea import CREA
    - c = CREA() # Automatically loads main dictionary or
-   - c = CREA('path_to_file.json') # Load custom json file
+   - c = CREA('path_to_file.csv') # Load custom csv file
+        - initialize with CREA(col_names = True) to include column names
+        - you can then pass column names as a list when using .select_cols, .cosine_similarity and .top_n_similar to only use those columns
    ### Usage
    - all_vectors = c.get_all_vectors()
    - vector = c.get_vector('word1')
