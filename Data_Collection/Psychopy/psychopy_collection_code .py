@@ -73,7 +73,7 @@ Please give your best estimate for each rating. Ideally the collection of rating
 Thanks again for participating in The Word Meaning Survey""", height = 0.03, wrapWidth = 1.3, color = 'black', pos = (0.0,0.0), alignText='left')
 instructions1.draw()
 win.flip()
-core.wait(4)
+core.wait(40)
 
 # Allow user to advance after reading 
 instructions1.text += "\n\n\nPress any key to begin."
@@ -110,7 +110,7 @@ Please take your time and try to provide accurate ratings.
 # Draw and show the instructions
 instructions2.draw()
 win.flip()
-core.wait(2)
+core.wait(20)
 
 # Allow participant to advance after reading 
 instructions2.text += "\n\n\nPress any key to begin."
