@@ -7,12 +7,9 @@ import csv
 import pandas as pd
 
 
-PACKAGE_DIR = os.path.dirname(__file__)
-DATA_PATH = os.path.join(PACKAGE_DIR, "data", "data.json")
-
 class CREA:
     def __init__(self, data_path=None, col_names=False):
-        # Load the JSON file when an instance is created
+        # Load the CSV file when an instance is created
         if data_path is None:
             default_url = 'https://raw.githubusercontent.com/askitowski1/CREA-Vectors/refs/heads/main/crea/all_words_dropna.csv'
             json_from_csv_data = self._csv_to_json(default_url, col_names)
@@ -135,6 +132,7 @@ class CREA:
         :param n: The number of similar words to return (default is 5)
         :type n: int
         """
+      
         if not columns:
             target_vec = self.get_vector(word)
         else:
@@ -144,6 +142,46 @@ class CREA:
             raise ValueError("Vector is empty")
         
         target_vec = np.array(target_vec).reshape(1, -1)
+        similarities = {}
+        for other_word, vec in self.word_vectors.items():
+            if other_word != word:
+                similarity = self.cosine_similarity(word, other_word, columns)
+                similarities[other_word] = similarity
+    
+        sorted_similarities = sorted(similarities.items(), key=lambda item: item[1], reverse=True)
+    
+        return sorted_similarities[:n]
+    def top_n_similar(self, word, columns=False, n=5):
+        """
+        Get the top N most similar words to a target word or vector by cosine similarity.
+        :param word: The target word (str) or a NumPy array (vector)
+        :type word: str or np.ndarray
+        :param columns: List of columns to use for similarity calculation (optional)
+        :type columns: list
+        :param n: The number of similar words to return (default is 5)
+        :type n: int
+        """
+        if isinstance(word, str): #check if its already a string or word
+            if not columns:
+                target_vec = self.get_vector(word)
+            else:
+                vec1 = self.select_cols([word], columns)
+                target_vec = vec1.get(word)
+            if target_vec is None:
+                raise ValueError("Vector is empty")
+            target_vec = np.array(target_vec).reshape(1, -1)
+            
+        elif isinstance(word, np.ndarray):  #if its already an array
+            if len(word) == 62:  #check if its the right length
+                word = word.reshape(1, -1)
+                temp = "temp_word" # Placeholder for the word to keep the functionality
+                self.word_vectors[temp] = word
+                word = temp
+            else:
+                raise ValueError("The vector must have 62 dimensions")
+        else:
+            raise TypeError("Target must be a string (word) or a NumPy array (vector)")
+        
         similarities = {}
         for other_word, vec in self.word_vectors.items():
             if other_word != word:
